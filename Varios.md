@@ -1,9 +1,9 @@
-Pasar de csv a Excel
+# Pasar de CSV a Excel
 
-Abrimos el archivo y nos mostrara toodo desordenado
+1. Abrimos el archivo y nos mostrará todo desordenado.
 
-Solución:
+## Solución:
 
-Data > y seleccionamos el icono from text/CSVc
-Aqui el video que me ayudo 
-https://www.youtube.com/watch?v=edwnaFgMzQg
+- Ir a **Data** y seleccionar el icono **From Text/CSV**.
+
+[Aquí el video que me ayudó](https://www.youtube.com/watch?v=edwnaFgMzQg)
