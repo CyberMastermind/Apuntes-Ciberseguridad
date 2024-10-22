@@ -1,0 +1,7 @@
+# Comandos Esenciales de Linux para Hacking Ético
+
+## 1. `ls`
+Muestra el contenido de un directorio.
+
+```bash
+ls -la
