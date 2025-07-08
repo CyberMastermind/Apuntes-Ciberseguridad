@@ -5,7 +5,7 @@ Aquí encontrarás apuntes, análisis y reflexiones sobre el apasionante (y desa
 
 ---
 
-##⚠️ Aviso Legal
+## ⚠️ Aviso Legal
 
 Estos apuntes son únicamente para fines educativos y de referencia.  
 No me hago responsable por el uso indebido de la información contenida.
@@ -19,7 +19,7 @@ Actúa siempre con ética y respeto en el ciberespacio. ⚡️
 
 Recursos prácticos para hackers éticos y entusiastas de la seguridad, organizados para facilitar tu aprendizaje y consulta.
 
-##📂 Estructura general
+## 📂 Estructura general
 
 - **Linux:** comandos esenciales para terminal y administración segura.  
 - **Comunicación:** protocolos, herramientas y mejores prácticas.  
@@ -29,8 +29,8 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 
 ---
 
-##🖥️ Linux: comandos útiles
-###📁 Navegación y manejo de archivos
+## 🖥️ Linux: comandos útiles
+### 📁 Navegación y manejo de archivos
 pwd                         / Muestra la ruta del directorio actual
 ls -lah                     / Lista archivos, incluso ocultos, en formato legible
 ll                          / Alias común de 'ls -l'
@@ -51,7 +51,7 @@ file archivo.txt            / Indica tipo de archivo (texto, binario, etc.)
 basename /ruta/archivo.txt  / Extrae nombre de archivo
 dirname /ruta/archivo.txt   / Extrae nombre del directorio
 
-###🔐 Permisos y usuarios
+### 🔐 Permisos y usuarios
 chmod 777 archivo.txt       / Da permisos totales a todos (⚠️ muy inseguro)
 chmod +x script.sh          / Da permisos de ejecución
 chmod -R 755 carpeta/       / Permisos recursivos lectura/ejecución
@@ -60,7 +60,7 @@ adduser John                / Crea nuevo usuario
 sudo -l                     / Muestra privilegios del usuario con sudo
 whoami                      / Muestra usuario actual
 
-###🔎 Búsqueda
+### 🔎 Búsqueda
 locate bash                 / Busca rutas relacionadas con "bash" (requiere `updatedb`)
 updatedb                    / Actualiza base de datos de locate
 find / -name archivo.txt    / Busca archivo desde raíz
@@ -68,30 +68,30 @@ grep "texto" archivo.txt    / Busca texto dentro de archivo
 cut -d':' -f1 /etc/passwd   / Extrae campo (nombre de usuarios, etc.)
 xargs                       / Ejecuta comandos sobre resultados de otro comando
 
-###⚙️ Variables y entorno
+### ⚙️ Variables y entorno
 echo $PATH                  / Muestra las rutas de búsqueda de comandos
 env                         / Lista variables de entorno
 export VAR=valor            / Crea/modifica variable temporal
 
-##📑 Procesamiento de texto y logs
+### 📑 Procesamiento de texto y logs
 head -n 10 archivo.txt      / Muestra las primeras 10 líneas
 tail -n 10 archivo.txt      / Muestra las últimas 10 líneas
 tail -f archivo.log         / Muestra en tiempo real nuevos registros
 diff archivo1 archivo2      / Compara archivos línea por línea
 tr 'a-z' 'A-Z'              / Convierte texto a mayúsculas
 
-###🕒 Programación de tareas
+### 🕒 Programación de tareas
 crontab -e                  / Edita tareas periódicas del usuario
 at 12:00                    / Programa una tarea para una hora concreta
 
-###📊 Procesos
+### 📊 Procesos
 top                         / Muestra procesos en tiempo real
 htop                        / Interfaz avanzada para ver procesos (si está instalado)
 ps aux                      / Lista todos los procesos
 kill -9 PID                 / Termina proceso por su ID
 history                     / Muestra historial de comandos
 
-###🌐 Red
+### 🌐 Red
 ifconfig                    / Configura interfaces de red (obsoleto)
 ip a                        / Alternativa moderna a ifconfig
 iwconfig                    / Configura interfaces inalámbricas
@@ -103,7 +103,7 @@ route                       / Tabla de rutas IP
 scp archivo usuario@IP:/ruta / Copia archivos por SSH
 lsof -i                     / Lista conexiones de red activas
 
-###💽 Disco y sistema
+### 💽 Disco y sistema
 df -h                       / Muestra uso del disco
 du -sh /var/lib/*           / Muestra tamaño de subdirectorios
 lsblk                       / Lista dispositivos de almacenamiento
@@ -115,20 +115,20 @@ date                        / Fecha y hora actual
 reboot                      / Reinicia el sistema
 shutdown now                / Apaga el sistema inmediatamente
 
-###🛠️ Archivos comprimidos
+### 🛠️ Archivos comprimidos
 tar -czvf archivo.tar.gz carpeta/  / Comprime en formato .tar.gz
 tar -xzvf archivo.tar.gz           / Descomprime archivo .tar.gz
 zip archivo.zip archivo.txt        / Comprime archivo en .zip
 unzip archivo.zip                  / Extrae archivos .zip
 
-###🛡️ Seguridad y análisis
+### 🛡️ Seguridad y análisis
 history | grep passwd              / Busca comandos sensibles en historial
 find / -perm -4000 2>/dev/null     / Busca archivos con SUID (potenciales riesgos)
 netstat -tulnp | grep LISTEN       / Ver puertos en escucha
 ls -alh /home/*/.ssh/              / Revisa llaves SSH de usuarios
 chkrootkit                         / Escáner básico de rootkits (si está instalado)
 
-//🌐 Comunicación: protocolos y herramientas
+## 🌐 Comunicación: protocolos y herramientas
 Protocolos esenciales: TCP/IP, UDP, HTTP/HTTPS, FTP, SMTP, DNS.
 
 Protocolos seguros: TLS/SSL, SSH, VPNs.
@@ -140,7 +140,7 @@ sudo tcpdump -i eth0 port 443          / Captura tráfico HTTPS
 nmap -sS -p 1-1000 192.168.1.10       / Escaneo de puertos
 
 
-##🔌 Puertos comunes
+## 🔌 Puertos comunes
 
 Estos son los puertos más usados en redes y sistemas. Conocerlos es fundamental para entender qué servicios están activos, sus riesgos asociados y cómo protegerlos. Muchos ataques apuntan a estos puertos, por eso es clave monitorearlos y asegurar su configuración.
 
