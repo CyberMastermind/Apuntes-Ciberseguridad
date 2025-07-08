@@ -31,25 +31,28 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 
 ## 🖥️ Linux: comandos útiles
 ### 📁 Navegación y manejo de archivos
-pwd                         / Muestra la ruta del directorio actual
-ls -lah                     / Lista archivos, incluso ocultos, en formato legible
-ll                          / Alias común de 'ls -l'
-cd ~/Music/                 / Entra a la carpeta Music del usuario actual
-cd ./ruta                   / Entra a una ruta relativa
-mkdir Scripts               / Crea carpeta llamada Scripts
-rmdir ~/Scripts             / Elimina carpeta vacía en home
-touch archivo.txt           / Crea un archivo vacío
-echo "Hola" > data.txt      / Crea o sobreescribe archivo con texto
-cp -a Music/ Documents/     / Copia carpetas recursivamente con atributos
-rsync -av origen/ destino/  / Sincroniza carpetas copiando solo lo necesario
-mv archivo.txt nuevo.txt    / Renombra un archivo
-mv archivo.txt destino/     / Mueve archivo a otra carpeta
-rm -i archivo.txt           / Elimina archivo con confirmación
-rm -rf carpeta/             / Elimina carpeta y contenido sin preguntar ⚠️
-stat archivo.txt            / Muestra info detallada de archivo
-file archivo.txt            / Indica tipo de archivo (texto, binario, etc.)
-basename /ruta/archivo.txt  / Extrae nombre de archivo
-dirname /ruta/archivo.txt   / Extrae nombre del directorio
+## 🖥️ Linux: comandos útiles
+### 📁 Navegación y manejo de archivos
+`pwd`                       / Muestra la ruta del directorio actual  
+`ls -lah`                   / Lista archivos, incluso ocultos, en formato legible  
+`ll`                        / Alias común de 'ls -l'  
+`cd ~/Music/`               / Entra a la carpeta Music del usuario actual  
+`cd ./ruta`                 / Entra a una ruta relativa  
+`mkdir Scripts`             / Crea carpeta llamada Scripts  
+`rmdir ~/Scripts`           / Elimina carpeta vacía en home  
+`touch archivo.txt`         / Crea un archivo vacío  
+`echo "Hola" > data.txt`    / Crea o sobreescribe archivo con texto  
+`cp -a Music/ Documents/`   / Copia carpetas recursivamente con atributos  
+`rsync -av origen/ destino/`/ Sincroniza carpetas copiando solo lo necesario  
+`mv archivo.txt nuevo.txt`  / Renombra un archivo  
+`mv archivo.txt destino/`   / Mueve archivo a otra carpeta  
+`rm -i archivo.txt`         / Elimina archivo con confirmación  
+`rm -rf carpeta/`           / Elimina carpeta y contenido sin preguntar ⚠️  
+`stat archivo.txt`          / Muestra info detallada de archivo  
+`file archivo.txt`          / Indica tipo de archivo (texto, binario, etc.)  
+`basename /ruta/archivo.txt`/ Extrae nombre de archivo  
+`dirname /ruta/archivo.txt` / Extrae nombre del directorio
+
 
 ### 🔐 Permisos y usuarios
 chmod 777 archivo.txt       / Da permisos totales a todos (⚠️ muy inseguro)
