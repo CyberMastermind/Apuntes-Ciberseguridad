@@ -30,111 +30,138 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 ---
 
 ## 🖥️ Linux: comandos útiles
-
 ### 📁 Navegación y manejo de archivos
 
 | Comando                         | Descripción                                                      |
 |--------------------------------|------------------------------------------------------------------|
-| `pwd`                          | Muestra la ruta del directorio actual                            |
-| `ls -lah`                      | Lista archivos, incluso ocultos, en formato legible              |
-| `ll`                           | Alias común de `ls -l`                                           |
-| `cd ~/Music/`                  | Entra a la carpeta Music del usuario actual                      |
-| `cd ./ruta`                    | Entra a una ruta relativa                                        |
-| `mkdir Scripts`               | Crea carpeta llamada Scripts                                     |
-| `rmdir ~/Scripts`             | Elimina carpeta vacía en home                                    |
-| `touch archivo.txt`           | Crea un archivo vacío                                            |
-| `echo "Hola" > data.txt`      | Crea o sobreescribe archivo con texto                           |
-| `cp -a Music/ Documents/`     | Copia carpetas recursivamente con atributos                      |
-| `rsync -av origen/ destino/`  | Sincroniza carpetas copiando solo lo necesario                   |
-| `mv archivo.txt nuevo.txt`    | Renombra un archivo                                              |
-| `mv archivo.txt destino/`     | Mueve archivo a otra carpeta                                     |
-| `rm -i archivo.txt`           | Elimina archivo con confirmación                                 |
-| `rm -rf carpeta/`             | Elimina carpeta y contenido sin preguntar ⚠️                     |
-| `stat archivo.txt`            | Muestra info detallada de archivo                                |
-| `file archivo.txt`            | Indica tipo de archivo (texto, binario, etc.)                    |
-| `basename /ruta/archivo.txt`  | Extrae nombre de archivo                                         |
-| `dirname /ruta/archivo.txt`   | Extrae nombre del directorio                                     |
+| `pwd`                          | Muestra la ruta absoluta del directorio actual.                  |
+| `ls -lah`                      | Lista archivos (incluso ocultos) con detalles y tamaño legible.  |
+| `ll`                           | Alias común para `ls -l` (listado detallado).                    |
+| `cd ~/Music/`                  | Cambia al directorio `Music` del usuario.                        |
+| `cd ./ruta`                    | Entra a una ruta relativa desde el directorio actual.            |
+| `mkdir Scripts`               | Crea una carpeta llamada `Scripts`.                              |
+| `rmdir ~/Scripts`             | Elimina la carpeta `Scripts` si está vacía.                      |
+| `touch archivo.txt`           | Crea un archivo vacío llamado `archivo.txt`.                     |
+| `echo "Hola" > data.txt`      | Crea o reemplaza `data.txt` con el texto "Hola".                |
+| `cp -a Music/ Documents/`     | Copia la carpeta `Music` a `Documents` con atributos.            |
+| `rsync -av origen/ destino/`  | Sincroniza carpetas sin duplicar archivos existentes.            |
+| `mv archivo.txt nuevo.txt`    | Renombra `archivo.txt` a `nuevo.txt`.                            |
+| `mv archivo.txt destino/`     | Mueve `archivo.txt` al directorio `destino/`.                    |
+| `rm -i archivo.txt`           | Pide confirmación antes de eliminar `archivo.txt`.               |
+| `rm -rf carpeta/`             | Borra `carpeta` y todo su contenido sin pedir confirmación ⚠️.   |
+| `stat archivo.txt`            | Muestra metadatos detallados del archivo.                        |
+| `file archivo.txt`            | Muestra el tipo de contenido del archivo.                        |
+| `basename /ruta/archivo.txt`  | Extrae el nombre del archivo sin la ruta.                        |
+| `dirname /ruta/archivo.txt`   | Extrae el directorio de la ruta del archivo.                     |
 
 ### 🔐 Permisos y usuarios
-chmod 777 archivo.txt        # Da permisos totales a todos (⚠️ muy inseguro)
-chmod +x script.sh           # Da permisos de ejecución
-chmod -R 755 carpeta/        # Permisos recursivos lectura/ejecución
-chown usuario:grupo archivo  # Cambia propietario de archivo
-adduser John                 # Crea nuevo usuario
-sudo -l                      # Muestra privilegios del usuario con sudo
-whoami                       # Muestra usuario actual
+
+| Comando                       | Descripción                                         |
+|------------------------------|-----------------------------------------------------|
+| `chmod 777 archivo.txt`       | Da permisos totales a todos (⚠️ muy inseguro).      |
+| `chmod +x script.sh`          | Da permiso de ejecución al script.                   |
+| `chmod -R 755 carpeta/`       | Da permisos lectura/ejecución recursivos a carpeta. |
+| `chown usuario:grupo archivo` | Cambia propietario y grupo de un archivo.           |
+| `adduser John`                | Crea un nuevo usuario llamado John.                  |
+| `sudo -l`                    | Muestra qué comandos puede ejecutar con sudo.        |
+| `whoami`                     | Muestra el usuario actual conectado.                 |
 
 ### 🔎 Búsqueda
-locate bash                  # Busca rutas relacionadas con "bash" (requiere `updatedb`)
-updatedb                     # Actualiza base de datos de locate
-find / -name archivo.txt     # Busca archivo desde raíz
-grep "texto" archivo.txt     # Busca texto dentro de archivo
-cut -d':' -f1 /etc/passwd    # Extrae campo (nombre de usuarios, etc.)
-xargs                        # Ejecuta comandos sobre resultados de otro comando
+
+| Comando                       | Descripción                                         |
+|------------------------------|-----------------------------------------------------|
+| `locate bash`                 | Busca archivos relacionados con "bash" (requiere actualizar base). |
+| `updatedb`                   | Actualiza la base de datos usada por `locate`.       |
+| `find / -name archivo.txt`    | Busca archivo por nombre desde la raíz.             |
+| `grep "texto" archivo.txt`    | Busca texto dentro de un archivo.                    |
+| `cut -d':' -f1 /etc/passwd`   | Extrae campos (ej. nombres de usuario) de archivos delimitados. |
+| `xargs`                      | Ejecuta comandos usando salida de otro comando.     |
 
 ### ⚙️ Variables y entorno
-echo $PATH                  # Muestra las rutas de búsqueda de comandos
-env                         # Lista variables de entorno
-export VAR=valor            # Crea/modifica variable temporal
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `echo $PATH`                | Muestra rutas donde busca comandos el sistema.      |
+| `env`                       | Muestra variables de entorno activas.                |
+| `export VAR=valor`          | Crea o modifica una variable temporal.               |
 
 ### 📑 Procesamiento de texto y logs
-bash
-Mostrar siempre los detalles
 
-Copiar
-head -n 10 archivo.txt      # Muestra las primeras 10 líneas
-tail -n 10 archivo.txt      # Muestra las últimas 10 líneas
-tail -f archivo.log         # Muestra en tiempo real nuevos registros
-diff archivo1 archivo2      # Compara archivos línea por línea
-tr 'a-z' 'A-Z'              # Convierte texto a mayúsculas
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `head -n 10 archivo.txt`    | Muestra las primeras 10 líneas de un archivo.       |
+| `tail -n 10 archivo.txt`    | Muestra las últimas 10 líneas de un archivo.        |
+| `tail -f archivo.log`       | Muestra en tiempo real las nuevas líneas del log.   |
+| `diff archivo1 archivo2`    | Compara línea a línea dos archivos.                  |
+| `tr 'a-z' 'A-Z'`            | Convierte texto a mayúsculas.                        |
 
 ### 🕒 Programación de tareas
-crontab -e                  # Edita tareas periódicas del usuario
-at 12:00                    # Programa una tarea para una hora concreta
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `crontab -e`                | Edita tareas programadas periódicas del usuario.    |
+| `at 12:00`                  | Programa una tarea única para una hora específica.  |
 
 ### 📊 Procesos
-top                         # Muestra procesos en tiempo real
-htop                        # Interfaz avanzada para ver procesos (si está instalado)
-ps aux                      # Lista todos los procesos
-kill -9 PID                 # Termina proceso por su ID
-history                     # Muestra historial de comandos
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `top`                       | Muestra procesos activos en tiempo real.            |
+| `htop`                      | Interfaz avanzada para ver procesos (si instalado). |
+| `ps aux`                    | Lista todos los procesos en ejecución.               |
+| `kill -9 PID`               | Termina un proceso con ID específico.                |
+| `history`                   | Muestra historial de comandos ejecutados.            |
 
 ### 🌐 Red
-ifconfig                    # Configura interfaces de red (obsoleto)
-ip a                        # Alternativa moderna a ifconfig
-iwconfig                    # Configura interfaces inalámbricas
-netstat -pbtona             # Muestra conexiones y puertos abiertos
-ss -tuln                    # Alternativa moderna a netstat
-ping 8.8.8.8                # Verifica conexión a Internet
-arp -a                      # Muestra tabla ARP
-route                       # Tabla de rutas IP
-scp archivo usuario@IP:/ruta # Copia archivos por SSH
-lsof -i                     # Lista conexiones de red activas
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `ifconfig`                  | Configura interfaces de red (obsoleto).              |
+| `ip a`                      | Alternativa moderna a `ifconfig`.                    |
+| `iwconfig`                  | Configura interfaces inalámbricas.                    |
+| `netstat -pbtona`           | Muestra conexiones y puertos abiertos con procesos. |
+| `ss -tuln`                  | Alternativa moderna a `netstat`.                      |
+| `ping 8.8.8.8`              | Verifica conexión a Internet.                         |
+| `arp -a`                    | Muestra tabla ARP (IP-MAC).                           |
+| `route`                     | Muestra tabla de rutas IP.                            |
+| `scp archivo usuario@IP:/ruta` | Copia archivo a otra máquina por SSH.             |
+| `lsof -i`                   | Lista conexiones de red activas.                      |
 
 ### 💽 Disco y sistema
-df -h                       # Muestra uso del disco
-du -sh /var/lib/*           # Muestra tamaño de subdirectorios
-lsblk                       # Lista dispositivos de almacenamiento
-mount                       # Muestra sistemas montados
-umount /dev/sdX             # Desmonta dispositivo
-uptime                      # Tiempo encendido del sistema
-uname -a                    # Info del kernel
-date                        # Fecha y hora actual
-reboot                      # Reinicia el sistema
-shutdown now                # Apaga el sistema inmediatamente
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `df -h`                     | Muestra uso del disco en formato legible.            |
+| `du -sh /var/lib/*`         | Muestra tamaño de subdirectorios.                     |
+| `lsblk`                     | Lista dispositivos de almacenamiento conectados.    |
+| `mount`                     | Muestra sistemas montados.                            |
+| `umount /dev/sdX`           | Desmonta dispositivo.                                 |
+| `uptime`                    | Tiempo que lleva encendido el sistema.                |
+| `uname -a`                  | Información del kernel y sistema.                      |
+| `date`                      | Muestra fecha y hora actuales.                         |
+| `reboot`                    | Reinicia el sistema.                                   |
+| `shutdown now`              | Apaga el sistema inmediatamente.                       |
 
 ### 🛠️ Archivos comprimidos
-tar -czvf archivo.tar.gz carpeta/  # Comprime en formato .tar.gz
-tar -xzvf archivo.tar.gz           # Descomprime archivo .tar.gz
-zip archivo.zip archivo.txt        # Comprime archivo en .zip
-unzip archivo.zip                  # Extrae archivos .zip
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `tar -czvf archivo.tar.gz carpeta/` | Comprime carpeta en archivo .tar.gz.           |
+| `tar -xzvf archivo.tar.gz`   | Descomprime archivo .tar.gz.                          |
+| `zip archivo.zip archivo.txt` | Comprime archivo en formato .zip.                  |
+| `unzip archivo.zip`          | Extrae archivos de un zip.                            |
 
 ### 🛡️ Seguridad y análisis
-history | grep passwd              # Busca comandos sensibles en historial
-find / -perm -4000 2>/dev/null     # Busca archivos con SUID (potenciales riesgos)
-netstat -tulnp | grep LISTEN       # Ver puertos en escucha
-ls -alh /home/*/.ssh/              # Revisa llaves SSH de usuarios
-chkrootkit                         # Escáner básico de rootkits (si está instalado)
+
+| Comando                      | Descripción                                         |
+|-----------------------------|-----------------------------------------------------|
+| `history | grep passwd`      | Busca comandos relacionados con "passwd" en historial. |
+| `find / -perm -4000 2>/dev/null` | Busca archivos con bit SUID (riesgos potenciales). |
+| `netstat -tulnp | grep LISTEN` | Muestra puertos abiertos y en escucha.            |
+| `ls -alh /home/*/.ssh/`      | Revisa llaves SSH de todos los usuarios.             |
+| `chkrootkit`                 | Escáner básico para detectar rootkits (si instalado). |
+
+
 
 ## 🌐 Comunicación: protocolos y herramientas
 Protocolos esenciales: TCP/IP, UDP, HTTP/HTTPS, FTP, SMTP, DNS.
