@@ -15,9 +15,11 @@ Actúa siempre con ética y respeto en el ciberespacio. ⚡️
 
 ---
 
-##📚 ¿Qué encontrarás en este repositorio?
+## 📚 ¿Qué encontrarás en este repositorio?
 
 Recursos prácticos para hackers éticos y entusiastas de la seguridad, organizados para facilitar tu aprendizaje y consulta.
+
+---
 
 ## 📂 Estructura general
 
@@ -30,6 +32,7 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 ---
 
 ## 🖥️ Linux: comandos útiles
+
 ### 📁 Navegación y manejo de archivos
 
 | Comando                         | Descripción                                                      |
@@ -39,20 +42,20 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 | `ll`                           | Alias común para `ls -l` (listado detallado).                    |
 | `cd ~/Music/`                  | Cambia al directorio `Music` del usuario.                        |
 | `cd ./ruta`                    | Entra a una ruta relativa desde el directorio actual.            |
-| `mkdir Scripts`               | Crea una carpeta llamada `Scripts`.                              |
-| `rmdir ~/Scripts`             | Elimina la carpeta `Scripts` si está vacía.                      |
-| `touch archivo.txt`           | Crea un archivo vacío llamado `archivo.txt`.                     |
-| `echo "Hola" > data.txt`      | Crea o reemplaza `data.txt` con el texto "Hola".                |
-| `cp -a Music/ Documents/`     | Copia la carpeta `Music` a `Documents` con atributos.            |
-| `rsync -av origen/ destino/`  | Sincroniza carpetas sin duplicar archivos existentes.            |
-| `mv archivo.txt nuevo.txt`    | Renombra `archivo.txt` a `nuevo.txt`.                            |
-| `mv archivo.txt destino/`     | Mueve `archivo.txt` al directorio `destino/`.                    |
-| `rm -i archivo.txt`           | Pide confirmación antes de eliminar `archivo.txt`.               |
-| `rm -rf carpeta/`             | Borra `carpeta` y todo su contenido sin pedir confirmación ⚠️.   |
-| `stat archivo.txt`            | Muestra metadatos detallados del archivo.                        |
-| `file archivo.txt`            | Muestra el tipo de contenido del archivo.                        |
-| `basename /ruta/archivo.txt`  | Extrae el nombre del archivo sin la ruta.                        |
-| `dirname /ruta/archivo.txt`   | Extrae el directorio de la ruta del archivo.                     |
+| `mkdir Scripts`                | Crea una carpeta llamada `Scripts`.                              |
+| `rmdir ~/Scripts`              | Elimina la carpeta `Scripts` si está vacía.                      |
+| `touch archivo.txt`            | Crea un archivo vacío llamado `archivo.txt`.                     |
+| `echo "Hola" > data.txt`       | Crea o reemplaza `data.txt` con el texto "Hola".                |
+| `cp -a Music/ Documents/`      | Copia la carpeta `Music` a `Documents` con atributos.            |
+| `rsync -av origen/ destino/`   | Sincroniza carpetas sin duplicar archivos existentes.            |
+| `mv archivo.txt nuevo.txt`     | Renombra `archivo.txt` a `nuevo.txt`.                            |
+| `mv archivo.txt destino/`      | Mueve `archivo.txt` al directorio `destino/`.                    |
+| `rm -i archivo.txt`            | Pide confirmación antes de eliminar `archivo.txt`.               |
+| `rm -rf carpeta/`              | Borra `carpeta` y todo su contenido sin pedir confirmación ⚠️.   |
+| `stat archivo.txt`             | Muestra metadatos detallados del archivo.                        |
+| `file archivo.txt`             | Muestra el tipo de contenido del archivo.                        |
+| `basename /ruta/archivo.txt`   | Extrae el nombre del archivo sin la ruta.                        |
+| `dirname /ruta/archivo.txt`    | Extrae el directorio de la ruta del archivo.                     |
 
 ### 🔐 Permisos y usuarios
 
@@ -161,18 +164,20 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 | `ls -alh /home/*/.ssh/`      | Revisa llaves SSH de todos los usuarios.             |
 | `chkrootkit`                 | Escáner básico para detectar rootkits (si instalado). |
 
-
+---
 
 ## 🌐 Comunicación: protocolos y herramientas
-Protocolos esenciales: TCP/IP, UDP, HTTP/HTTPS, FTP, SMTP, DNS.
 
-Protocolos seguros: TLS/SSL, SSH, VPNs.
-
+Protocolos esenciales: TCP/IP, UDP, HTTP/HTTPS, FTP, SMTP, DNS.  
+Protocolos seguros: TLS/SSL, SSH, VPNs.  
 Herramientas destacadas: Wireshark, tcpdump, nmap.
 
 Ejemplos prácticos:
-sudo tcpdump -i eth0 port 443          / Captura tráfico HTTPS
-nmap -sS -p 1-1000 192.168.1.10       / Escaneo de puertos
+
+```bash
+sudo tcpdump -i eth0 port 443          # Captura tráfico HTTPS
+nmap -sS -p 1-1000 192.168.1.10       # Escaneo de puertos
+
 
 
 ## 🔌 Puertos comunes
