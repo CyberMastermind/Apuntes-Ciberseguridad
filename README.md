@@ -178,6 +178,7 @@ Ejemplos prácticos:
 sudo tcpdump -i eth0 port 443          # Captura tráfico HTTPS
 nmap -sS -p 1-1000 192.168.1.10       # Escaneo de puertos
 
+
 ## 🔌 Puertos comunes
 
 Estos son los puertos más usados en redes y sistemas. Conocerlos es fundamental para entender qué servicios están activos, sus riesgos asociados y cómo protegerlos. Muchos ataques apuntan a estos puertos, por eso es clave monitorearlos y asegurar su configuración.
