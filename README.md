@@ -177,6 +177,7 @@ Ejemplos prácticos:
 ```bash
 sudo tcpdump -i eth0 port 443          # Captura tráfico HTTPS
 nmap -sS -p 1-1000 192.168.1.10       # Escaneo de puertos
+```
 
 
 ## 🔌 Puertos comunes
