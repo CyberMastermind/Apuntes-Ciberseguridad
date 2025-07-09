@@ -8,7 +8,7 @@ Aquí encontrarás apuntes, análisis y reflexiones sobre el apasionante (y desa
 ## ⚠️ Aviso Legal
 
 Estos apuntes son únicamente para fines educativos y de referencia.  
-No me hago responsable por el uso indebido de la información contenida.
+No me hago responsable del uso indebido de la información contenida.
 
 **Recuerda:** con gran poder viene una gran responsabilidad.  
 Actúa siempre con ética y respeto en el ciberespacio. ⚡️
@@ -21,13 +21,15 @@ Recursos prácticos para hackers éticos y entusiastas de la seguridad, organiza
 
 ---
 
-## 📂 Estructura general
+## 📑 Índice
 
-- **Linux:** comandos esenciales para terminal y administración segura.  
-- **Comunicación:** protocolos, herramientas y mejores prácticas.  
-- **Write-ups:** análisis y casos prácticos de vulnerabilidades.  
-- **Puertos comunes:** tabla con servicios, riesgos y protocolos.  
-- **Herramientas online:** recursos para análisis y detección.
+- [Linux: comandos útiles](#linux-comandos-útiles)  
+- [Comunicación: protocolos y herramientas](#comunicación-protocolos-y-herramientas)  
+- [Puertos comunes](#puertos-comunes)  
+- [Herramientas online](#herramientas-online-para-análisis)  
+- [Buenas prácticas de seguridad](#buenas-prácticas-de-seguridad)  
+- [Glosario](#glosario)
+
 
 ---
 
@@ -178,7 +180,24 @@ Ejemplos prácticos:
 sudo tcpdump -i eth0 port 443          # Captura tráfico HTTPS
 nmap -sS -p 1-1000 192.168.1.10       # Escaneo de puertos
 ```
+## 🧰 Comandos y ejemplos prácticos para análisis
 
+```bash
+# Buscar en logs mensajes de error
+grep -i "error" /var/log/syslog
+
+# Mostrar últimas 50 líneas de un archivo de log
+tail -n 50 /var/log/auth.log
+
+# Filtrar procesos por nombre
+ps aux | grep sshd
+
+# Mostrar conexiones de red activas
+ss -tuln
+
+# Ver permisos y propietario de un archivo
+ls -l /etc/passwd
+```
 
 ## 🔌 Puertos comunes
 
@@ -186,11 +205,11 @@ Estos son los puertos más usados en redes y sistemas. Conocerlos es fundamental
 
 | Puerto(s)  | Protocolo | Servicio    | Descripción y Riesgos                         |
 |------------|-----------|-------------|----------------------------------------------|
-| 20, 21     | TCP       | FTP         | Transferencia sin cifrado, riesgo MITM        |
+| 20, 21     | TCP       | FTP         | Transferencia sin cifrado, riesgo MITM       |
 | 22         | TCP       | SSH         | Acceso remoto seguro                          |
 | 23         | TCP       | Telnet      | Sin cifrado, no recomendado                   |
-| 25         | TCP       | SMTP        | Envío de correo, riesgo spam y spoofing       |
-| 53         | UDP/TCP   | DNS         | Vulnerable a ataques DDoS y spoofing          |
+| 25         | TCP       | SMTP        | Envío de correo, riesgo spam y spoofing      |
+| 53         | TCP/UDP   | DNS         | Vulnerable a ataques DDoS y spoofing          |
 | 67, 68     | UDP       | DHCP        | Riesgo spoofing en asignación IP              |
 | 69         | UDP       | TFTP        | Transferencia simple, no seguro               |
 | 80         | TCP       | HTTP        | Tráfico sin cifrado                           |
@@ -205,6 +224,7 @@ Estos son los puertos más usados en redes y sistemas. Conocerlos es fundamental
 | 8080       | TCP       | HTTP alt    | Proxies o servicios web alternativos          |
 | 3306       | TCP       | MySQL       | Base de datos, proteger con firewall          |
 | 5432       | TCP       | PostgreSQL  | Base de datos, mismo cuidado que MySQL        |
+
 
 ---
 
@@ -223,15 +243,46 @@ Estas herramientas son esenciales para la investigación y análisis en ciberseg
 | Censys                | [censys.io](https://www.censys.io)                    | Escanea infraestructura pública y certificados SSL para detectar riesgos.                      |
 | IP Quality Score      | [ipqualityscore.com](https://www.ipqualityscore.com)  | Evalúa el riesgo de IPs, correos y dispositivos para prevenir fraudes.                         |
 | Whois Domain Tools    | [domaintools.com](https://www.domaintools.com)        | Consulta datos de registro y propiedad de dominios.                                           |
-| AnyRun Sandbox        | [any.run](https://any.run)                             | Plataforma interactiva para análisis dinámico de malware en tiempo real.                       |
+| AnyRun                | [any.run](https://any.run)                             | Plataforma interactiva para análisis dinámico de malware en tiempo real.                       |
 | Hybrid Analysis       | [hybrid-analysis.com](https://www.hybrid-analysis.com) | Sandbox automatizado que genera reportes detallados de malware.                               |
-| Cuckoo Sandbox        | [cuckoosandbox.org](https://www.cuckoosandbox.org)    | Herramienta open source para análisis automatizado de malware en entornos seguros.            |
+| Cuckoo                | [cuckoosandbox.org](https://www.cuckoosandbox.org)    | Herramienta open source para análisis automatizado de malware en entornos seguros.            |
 | MalwareBazaar         | [bazaar.abuse.ch](https://bazaar.abuse.ch)            | Repositorio público de muestras de malware para investigación.                                |
 | ThreatCrowd           | [threatcrowd.org](https://www.threatcrowd.org)        | Relaciona IPs, dominios, hashes y emails maliciosos para análisis de amenazas.                 |
 | CIRCL Passive DNS     | [circl.lu](https://www.circl.lu)                       | Consulta histórica de resoluciones DNS para seguimiento y análisis.                            |
 | FireEye Threat Intel  | [fireeye.com](https://www.fireeye.com)                 | Informes y datos sobre amenazas avanzadas y ataques dirigidos.                                |
 | VirusTotal Intelligence | [virustotal.com/intelligence](https://www.virustotal.com/intelligence) | Versión avanzada para análisis masivo y detección de patrones de amenazas.                     |
 | MITRE ATT&CK Navigator | [attack.mitre.org](https://attack.mitre.org)          | Framework que mapea tácticas y técnicas usadas por atacantes para mejorar defensas y detección.|
+
+---
+
+## 🛡️ Buenas prácticas de seguridad
+
+- Mantén el sistema y aplicaciones actualizados regularmente.  
+- Usa usuarios con privilegios mínimos para tareas diarias.  
+- Evita permisos 777 en archivos o carpetas críticos.  
+- Usa firewalls para restringir accesos no autorizados.  
+- Realiza backups periódicos y verifica su integridad.  
+- Revisa logs y monitorea eventos sospechosos con herramientas adecuadas.
+
+---
+📚 Referencias y documentación
+Nmap Documentation
+
+Tcpdump Tutorial
+
+Linux Command Cheat Sheet
+
+📖 Glosario
+MITM: Man In The Middle, ataque donde un atacante intercepta la comunicación entre dos partes.
+
+SUID: Set User ID, bit especial que permite ejecutar un programa con los permisos del propietario.
+
+SSH: Secure Shell, protocolo para acceso remoto seguro.
+
+DDoS: Distributed Denial of Service, ataque que satura un servicio para hacerlo inaccesible.
+
+Sandbox: Entorno aislado para analizar software o archivos sospechosos sin riesgos.
+
 
 🚀 ¿Quieres contribuir?
 Si tienes trucos, correcciones o nuevos apuntes, ¡haz un pull request!
