@@ -178,14 +178,12 @@ Ejemplos prácticos:
 sudo tcpdump -i eth0 port 443          # Captura tráfico HTTPS
 nmap -sS -p 1-1000 192.168.1.10       # Escaneo de puertos
 
-
-
 ## 🔌 Puertos comunes
 
 Estos son los puertos más usados en redes y sistemas. Conocerlos es fundamental para entender qué servicios están activos, sus riesgos asociados y cómo protegerlos. Muchos ataques apuntan a estos puertos, por eso es clave monitorearlos y asegurar su configuración.
 
 | Puerto(s)  | Protocolo | Servicio    | Descripción y Riesgos                         |
-|------------|-----------|-------------|--------------------------------------------   |
+|------------|-----------|-------------|----------------------------------------------|
 | 20, 21     | TCP       | FTP         | Transferencia sin cifrado, riesgo MITM        |
 | 22         | TCP       | SSH         | Acceso remoto seguro                          |
 | 23         | TCP       | Telnet      | Sin cifrado, no recomendado                   |
@@ -205,34 +203,33 @@ Estos son los puertos más usados en redes y sistemas. Conocerlos es fundamental
 | 8080       | TCP       | HTTP alt    | Proxies o servicios web alternativos          |
 | 3306       | TCP       | MySQL       | Base de datos, proteger con firewall          |
 | 5432       | TCP       | PostgreSQL  | Base de datos, mismo cuidado que MySQL        |
-L
 
+---
 
 ## 🛠️ Herramientas online para análisis
 
 Estas herramientas son esenciales para la investigación y análisis en ciberseguridad. Permiten detectar malware, analizar tráfico sospechoso, consultar reputación de IPs o dominios y explorar amenazas. Son recursos clave para analistas, pentesters y equipos de respuesta ante incidentes.
 
 | Herramienta            | Enlace                          | Descripción                                          |
-|-----------------------|--------------------------------|------------------------------------------------------|
-| VirusTotal            | [virustotal.com](https://www.virustotal.com)             | Escanea archivos y URLs con múltiples motores antivirus. |
-| urlscan.io            | [urlscan.io](https://urlscan.io)                         | Analiza comportamiento y contenido de URLs.              |
-| AbuseIPDB             | [abuseipdb.com](https://www.abuseipdb.com)               | Base colaborativa para reportar IPs maliciosas.          |
-| IPVoid                | [ipvoid.com](https://www.ipvoid.com)                     | Reputación de IPs y detección en listas negras.          |
-| Talos Intelligence    | [talosintelligence.com](https://talosintelligence.com)   | Intel de amenazas y reputación de IPs y dominios.        |
-| Shodan                | [shodan.io](https://www.shodan.io)                       | Motor de búsqueda para dispositivos conectados a internet|
-| Censys                | [censys.io](https://censys.io)                           | Escanea infraestructura pública y certificados SSL.      |
-| IP Quality Score      | [ipqualityscore.com](https://www.ipqualityscore.com)     | Evalúa riesgo de IPs, emails y dispositivos.             |
-| Whois Domain Tools    | [domaintools.com](https://www.domaintools.com)           | Consulta información de registro de dominios.            |
-| AnyRun Sandbox        | [any.run](https://any.run)                               | Análisis dinámico interactivo de malware.                |
-| Hybrid Analysis       | [hybrid-analysis.com](https://www.hybrid-analysis.com)   | Sandbox para análisis automático de malware.             |
-| Cuckoo Sandbox        | [cuckoosandbox.org](https://cuckoosandbox.org)           | Análisis automatizado open source de malware.            |
-| MalwareBazaar         | [bazaar.abuse.ch](https://bazaar.abuse.ch)               | Repositorio de muestras de malware.                      |
-| ThreatCrowd           | [threatcrowd.org](https://www.threatcrowd.org)           | Relaciona IPs, dominios, hashes y emails maliciosos.     |
-| CIRCL Passive DNS     | [circl.lu](https://www.circl.lu)                         | Consulta histórica de resoluciones DNS.                  |
-| FireEye Threat Intel  | [fireeye.com](https://www.fireeye.com)                   | Informes y datos sobre amenazas avanzadas.               |
-| VirusTotal            | (https://www.virustotal.com/intelligence)                | Versión avanzada para análisis profundo.                 |
+|------------------------|--------------------------------|------------------------------------------------------|
+| VirusTotal             | [virustotal.com](https://www.virustotal.com)             | Escanea archivos y URLs con múltiples motores antivirus. |
+| urlscan.io             | [urlscan.io](https://urlscan.io)                         | Analiza comportamiento y contenido de URLs.              |
+| AbuseIPDB              | [abuseipdb.com](https://www.abuseipdb.com)               | Base colaborativa para reportar IPs maliciosas.          |
+| IPVoid                 | [ipvoid.com](https://www.ipvoid.com)                     | Reputación de IPs y detección en listas negras.          |
+| Talos Intelligence     | [talosintelligence.com](https://talosintelligence.com)   | Intel de amenazas y reputación de IPs y dominios.        |
+| Shodan                 | [shodan.io](https://www.shodan.io)                       | Motor de búsqueda para dispositivos conectados a internet|
+| Censys                 | [censys.io](https://censys.io)                           | Escanea infraestructura pública y certificados SSL.      |
+| IP Quality Score       | [ipqualityscore.com](https://www.ipqualityscore.com)     | Evalúa riesgo de IPs, emails y dispositivos.             |
+| Whois Domain Tools     | [domaintools.com](https://www.domaintools.com)           | Consulta información de registro de dominios.            |
+| AnyRun Sandbox         | [any.run](https://any.run)                               | Análisis dinámico interactivo de malware.                |
+| Hybrid Analysis        | [hybrid-analysis.com](https://www.hybrid-analysis.com)   | Sandbox para análisis automático de malware.             |
+| Cuckoo Sandbox         | [cuckoosandbox.org](https://cuckoosandbox.org)           | Análisis automatizado open source de malware.            |
+| MalwareBazaar          | [bazaar.abuse.ch](https://bazaar.abuse.ch)               | Repositorio de muestras de malware.                      |
+| ThreatCrowd            | [threatcrowd.org](https://www.threatcrowd.org)           | Relaciona IPs, dominios, hashes y emails maliciosos.     |
+| CIRCL Passive DNS      | [circl.lu](https://www.circl.lu)                         | Consulta histórica de resoluciones DNS.                  |
+| FireEye Threat Intel   | [fireeye.com](https://www.fireeye.com)                   | Informes y datos sobre amenazas avanzadas.               |
+| VirusTotal Intelligence | [virustotal.com/intelligence](https://www.virustotal.com/intelligence) | Versión avanzada para análisis profundo.          |
 | MITRE ATT&CK Navigator | [attack.mitre.org](https://attack.mitre.org)            | Mapea técnicas y tácticas de ataques cibernéticos.       |
-
 
 🚀 ¿Quieres contribuir?
 Si tienes trucos, correcciones o nuevos apuntes, ¡haz un pull request!
